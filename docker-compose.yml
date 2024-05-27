@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  mi-proyecto-microservicio:
+    container_name: mi-proyecto-microservicio
+    image: mi-proyecto-microservicio:v1
+    build :
+      context: .
+    ports:
+      - "9001:9001"
+    networks:
+      - proyectos-app
+networks:
+  proyectos-app:
