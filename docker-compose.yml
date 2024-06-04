@@ -6,8 +6,39 @@ services:
     build :
       context: .
     ports:
-      - "9001:9001"
+      - "9001"
     networks:
       - proyectos-app
+
+  mi-proyecto-microservicio-2:
+    container_name: mi-proyecto-microservicio-2
+    image: mi-proyecto-microservicio:v1
+    build :
+      context: .
+    ports:
+      - "9001"
+    networks:
+      - proyectos-app
+
+  mi-proyecto-microservicio-3:
+    container_name: mi-proyecto-microservicio-3
+    image: mi-proyecto-microservicio:v1
+    build :
+      context: .
+    ports:
+      - "9001"
+    networks:
+      - proyectos-app
+
+  balanceador:
+    container_name: balanceador
+    image: balanceador:v1
+    build :
+      context: ./balanceador
+    ports:
+      - "9002:80"
+    networks:
+      - proyectos-app
+
 networks:
   proyectos-app:

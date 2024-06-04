@@ -6,6 +6,7 @@ const Universidad = require('../models/universidad');
 const { request, response } = require('express');
 
 const obtenerProyecto = async (req = request, res = response) => {
+    console.log("peticion a getProyecto");
     try {
         const proyecto = await Proyecto.find()
         .populate({
