@@ -22,6 +22,10 @@ services:
       - "9001"
     networks:
       - proyectos-app
+    environment:
+      -MONGODB_URI=${MONGODB_URI}
+      -PORT=9001
+
 
   mi-proyecto-microservicio-3:
     container_name: mi-proyecto-microservicio-3
@@ -32,6 +36,10 @@ services:
       - "9001"
     networks:
       - proyectos-app
+    environment:
+      -MONGODB_URI=${MONGODB_URI}
+      -PORT=9001
+
 
   balanceador:
     container_name: balanceador
