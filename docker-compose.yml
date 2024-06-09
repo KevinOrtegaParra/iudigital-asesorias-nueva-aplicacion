@@ -9,6 +9,9 @@ services:
       - "9001"
     networks:
       - proyectos-app
+    environment:
+      -MONGODB_URI=${MONGODB_URI}
+      -PORT=9001
 
   mi-proyecto-microservicio-2:
     container_name: mi-proyecto-microservicio-2
